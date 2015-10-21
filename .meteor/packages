@@ -39,3 +39,5 @@ telescope:update-prompt
 
 # custom
 standard-minifiers
+telescope:zeiss
+telescope-theme-learn

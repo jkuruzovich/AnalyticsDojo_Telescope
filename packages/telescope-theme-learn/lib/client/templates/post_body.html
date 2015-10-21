@@ -1,0 +1,10 @@
+<template name="eng_post_body">
+    <div class="post-body markdown" aria-live="polite">{{{htmlBody}}}
+        <br>
+        {{#if orgName}}{{orgName}} <br>{{/if}}
+        {{#if orgWebsite}}{{orgWebsite}} <br>{{/if}}
+        {{#if contactName}}{{contactName}} <br>{{/if}}
+        {{#if contactPhone}}{{contactPhone}} <br>{{/if}}
+        {{#if contactEmail}}{{contactEmail}} <br>{{/if}}
+       </div>
+</template>
