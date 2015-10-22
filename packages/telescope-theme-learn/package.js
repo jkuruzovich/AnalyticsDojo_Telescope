@@ -23,7 +23,10 @@ Package.onUse(function (api) {
         'lib/client/templates/post_body.html',
         'lib/client/templates/comment_item.html',
         'lib/client/templates/comment_reply.html',
-        'i18n/en.i18n.json'
+        'lib/client/templates/header.html',
+       'lib/client/templates/header.js',
+        'i18n/en.i18n.json',
+        'lib/client/stylesheets/custom.scss'
   ], ['client']);
 
         api.addFiles([

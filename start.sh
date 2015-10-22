@@ -1,2 +1,2 @@
-meteor --settings settings.json
+meteor run  --settings settings.json
 
