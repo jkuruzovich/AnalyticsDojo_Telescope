@@ -1,0 +1,53 @@
+<!-- 
+
+Calendar List Compact Component
+
+title (String)
+| The title of the calendar list
+
+incoming (Cursor)
+| A cursor containing the new calendars since render
+
+calendarsCursor (Cursor)
+| A cursor containing the calendar list
+
+calendarsCount (Number)
+| How many calendars are loaded
+
+calendarsReady (Boolean)
+| Whether the subscription is ready
+
+hasMoreCalendars (Boolean)
+| Whether there are still more calendars that can be loaded
+
+loadMoreHandler (Function)
+| What to do when the user clicks "load more"
+
+calendarsField (Object)
+| An object cont
+
+-->
+
+<template name="calendars_list_compact">
+  <table>
+    <thead>
+      <tr>
+        <td>Calendar</td>
+        <td>{{fieldLabel}}</td>
+      </tr>
+    </thead>
+    {{#each calendarsCursor}}
+      <tr>
+        <td><a href="{{pathFor 'calendarPage' _id=_id}}">{{title}}</a></td>
+        <td>{{fieldValue}}</td>
+      </tr>
+    {{/each}}
+    {{#if hasMoreCalendars}}
+      <tr>
+        <td colspan="2">
+          <a class="downvoted-more more-button grid-module" href="#"><span>{{_ "load_more"}}</span></a>
+        </td>
+      </tr>
+    {{/if}}
+  </table>
+</template>

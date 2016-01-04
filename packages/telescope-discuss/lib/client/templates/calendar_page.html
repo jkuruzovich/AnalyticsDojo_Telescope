@@ -1,0 +1,33 @@
+<template name="calendar_page">
+  {{#if ready}}
+    {{#if calendar}}
+      {{#with calendar}}
+        {{#if canView}}
+          {{#if isPending}}
+            <div class="grid">
+              <div class="error pending-message module">
+                {{_ "thanks_your_calendar_is_awaiting_approval"}}
+              </div>
+            </div>
+          {{/if}}
+          <div class="single-calendar grid">
+            <div class="calendars calendars-list">
+              {{> calendar_item calendar=this}}
+            </div>
+            {{#if body}}
+              {{> calendar_body}}
+            {{/if}}
+            {{> comment_submit}}
+            {{> comment_list}}
+          </div>
+        {{else}}
+          {{> no_rights}}
+        {{/if}}
+      {{/with}}
+    {{else}}
+      {{> not_found}}
+    {{/if}}
+  {{else}}
+    <div class="calendars-loading">{{> loading}}</div>
+  {{/if}}
+</template>

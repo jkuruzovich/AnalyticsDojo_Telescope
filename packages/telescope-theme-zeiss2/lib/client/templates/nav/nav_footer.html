@@ -1,0 +1,23 @@
+<!-- not used -->
+
+<template name="nav_footer">
+  <div class="nav-footer-search search-closed {{moduleClass}}">
+    {{> search}}
+  </div>
+  <div class="nav-footer">
+    {{#if isLoggedIn}}
+      {{> menuComponent menuName="user" menuLabelTemplate="user_menu_icon" menuLabelData=user menuItems=menuItems menuClass="menu-dropdown"}}
+    {{else}}
+      <a class="nav-icon account-link sign-in" href="{{pathFor 'signIn'}}">{{{icon "user"}}}</a>
+    {{/if}}
+    <a class="nav-icon" href="{{pathFor 'postSubmit'}}">{{{icon "add"}}}</a>
+    <a class="nav-icon js-toggle-search" href="/search">{{{icon "search"}}}</a>
+    {{#if hasAboutPage}}
+      <a class="nav-icon" href="/page/about">{{{icon "about"}}}</a>
+    {{/if}}
+  </div>
+</template>
+
+<template name="user_menu_icon">
+  <a class="nav-icon" href="{{pathFor 'adminSettings'}}">{{> avatar userId=this._id shape="circle" size="extra-small"}}</a>
+</template>

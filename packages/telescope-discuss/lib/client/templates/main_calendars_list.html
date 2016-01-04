@@ -1,0 +1,11 @@
+<template name="main_calendars_list">
+  <div class="main-calendars-list">
+    {{> modules zone="calendarsListTop"}}
+    {{#if customTemplate}}
+      {{> Template.dynamic template=customTemplate data=arguments}}
+    {{else}}
+      {{> calendars_list_controller arguments}}
+    {{/if}}
+    {{> modules zone="calendarsListBottom"}}
+  </div>
+</template>

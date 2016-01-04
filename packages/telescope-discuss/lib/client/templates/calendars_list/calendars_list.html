@@ -1,0 +1,71 @@
+<!-- 
+
+Calendars List Component
+
+title (String)
+| The title of the calendar list
+
+incoming (Cursor)
+| A cursor containing the new calendars since render
+
+calendarsCursor (Cursor)
+| A cursor containing the calendar list
+
+calendarsCount (Number)
+| How many calendars are loaded
+
+calendarsReady (Boolean)
+| Whether the subscription is ready
+
+hasMoreCalendars (Boolean)
+| Whether there are still more calendars that can be loaded
+
+loadMoreHandler (Function)
+| What to do when the user clicks "load more"
+
+showFilters (Boolean)
+| Whether to show filters (views nav) (*not implemented yet*)
+-->
+
+<template name="calendars_list">
+    This is the calendar list.
+  <div class="calendars-wrapper grid">
+    <div class="calendars list {{calendarsLayout}}" aria-live="polite">
+      {{#each calendarsCursor}}
+        {{> before_calendar_item}}
+        {{> calendar_item calendar=this}}
+        {{> after_calendar_item}}
+      {{/each}}
+    </div>
+    {{> calendarsLoadMore}}
+  </div>
+</template>
+
+<template name="calendarsListIncoming">
+  {{#if count}}
+    <a class="more-button show-new grid-module" href="">
+      <span>
+        {{_ "view"}} {{count}} {{_ "new"}} {{pluralize count "calendar"}}
+      </span>
+    </a>
+  {{/if}}
+</template>
+
+<template name="calendarsLoadMore">
+  <div class="calendars-load-more">
+    {{#if calendarsReady}}
+      {{#if hasCalendars}}
+        {{#if showLoadMoreButton}}
+          <a class="more-button" href="#"><span>{{_ "load_more"}}</span></a>
+        {{/if}}
+        {{#if showInfiniteScroll}}
+          <div class="calendars-loading">{{> loading}}</div>
+        {{/if}}
+      {{else}}
+        <div class="no-calendars">{{_ "sorry_we_couldnt_find_any_calendars"}}</div>
+      {{/if}}
+    {{else}}
+      <div class="calendars-loading">{{> loading}}</div>
+    {{/if}}
+  </div>
+</template>

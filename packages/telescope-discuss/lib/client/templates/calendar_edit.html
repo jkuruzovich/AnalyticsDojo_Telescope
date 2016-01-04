@@ -1,0 +1,13 @@
+<template name="calendar_edit">
+  {{#if ready}}
+    <div class="form-page calendar-edit">
+      {{#checker check="edit" doc=calendar message="sorry_you_cannot_edit_this_calendar"}}
+        <div class="grid grid-module">
+          {{> quickForm collection="Calendars" doc=calendar id="editCalendarForm" template="bootstrap3-horizontal" label-class="control-label" input-col-class="controls" type="method-update" meteormethod="editCalendar" fields=calendarFields}}
+        </div>
+      {{/checker}}
+    </div>
+  {{else}}
+    {{> loading}}
+  {{/if}}
+</template>

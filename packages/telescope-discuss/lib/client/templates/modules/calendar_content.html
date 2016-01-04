@@ -1,0 +1,9 @@
+<template name="calendar_content">
+  <div class="calendar-content {{moduleClass}}">
+    {{> modules zone="calendarThumbnail" moduleData=this}}
+    <div class="calendar-info">
+      {{> modules zone="calendarHeading" zoneClass="calendar-heading" moduleData=this}}
+      {{> modules zone="calendarMeta" zoneClass="calendar-meta" moduleClass="calendar-meta-item" moduleData=this}}
+    </div>
+  </div>
+</template>
