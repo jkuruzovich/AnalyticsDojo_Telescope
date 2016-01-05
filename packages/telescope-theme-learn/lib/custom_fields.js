@@ -1,7 +1,5 @@
 // Custom Post Field
 
-Posts.removeField("url")
-Comments.removeField("body")
 
 
 

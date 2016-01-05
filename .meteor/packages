@@ -11,6 +11,7 @@ telescope:core
 
 telescope:migrations
 telescope:api
+telescope:cloudinary
 telescope:daily
 telescope:datetimepicker
 telescope:email
@@ -37,7 +38,16 @@ telescope:update-prompt
 ############ Your Custom Packages ############
 
 # custom
-standard-minifiers
-telescope:zeiss
+telescope:zeiss2
 telescope-theme-learn
 jeremy:telescope-plugin-hero
+telescope:debug
+telescope:discuss
+d3js:d3
+
+#https://kadira.io/academy/meteor-routing-guide/content/rendering-react-components
+react
+react-template-helper
+#https://www.discovermeteor.com/blog/blaze-to-react-07-react/
+#http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio/
+#https://facebook.github.io/react/docs/thinking-in-react.html
